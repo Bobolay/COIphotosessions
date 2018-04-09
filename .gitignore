@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 
+Gemfile.lock
 public
 db/schema.rb
 vendor/assets/bower_components
