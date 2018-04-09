@@ -1,0 +1,180 @@
+/ Main banner
+.banner-wrap
+  
+  .row
+
+    .columns.medium-11.medium-push-1
+      p.title Професійна фотозйомка
+      p.subtitle У Львові
+      .description
+        p Каталоги не повинні бути нудними, банери &mdash; банальними, а фото &mdash; нецікавими.
+        p У фото студії COI все необхідне для особливих кадрів!
+
+    .columns.medium-4.xlarge-3.medium-push-1.end
+      a.button.contact
+        = inline_svg ('icons/phone.svg')
+        span Замовити фотосесію
+
+    .columns.medium-8.xlarge-9
+      .img-container
+        .img-background style="background-image: url(#{asset_path('photo/banner-bg.jpg')})"
+
+/ Portfolio examples
+.portfolio-wrap
+
+  .row
+    .columns
+      
+      p.examples-title Приклади робіт
+
+    .columns.large-4
+      ul.category-list
+        li data-carousel-attr="1" Одяг, аксесуари, прикраси
+        li data-carousel-attr="2" Художнє фото
+        li.active data-carousel-attr="3" Портретна зйомка
+        li data-carousel-attr="4" Предметна фотозйомка
+        li data-carousel-attr="5" Food photo
+        li data-carousel-attr="6" Ділова фотосесія
+        li data-carousel-attr="7" Ювелірні вироби
+
+    .columns.large-8
+      .carousel-wrap
+        / Одяг, аксесуари, прикраси
+        .owl-carousel.animated-thumbnials data-carousel-attr="1"
+          a.item data-src="#{asset_path('photo/carousel/pic(1).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(1).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(2).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(2).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(3).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(3).jpg')}" alt=""
+        / Художнє фото
+        .owl-carousel.animated-thumbnials data-carousel-attr="2"
+          a.item data-src="#{asset_path('photo/carousel/pic(4).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(4).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(5).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(5).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(6).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(6).jpg')}" alt=""
+        / Портретна зйомка
+        .owl-carousel.animated-thumbnials.visible data-carousel-attr="3"
+          a.item data-src="#{asset_path('photo/carousel/pic(7).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(7).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(8).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(8).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(9).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(9).jpg')}" alt=""
+        / Предметна фотозйомка
+        .owl-carousel.animated-thumbnials data-carousel-attr="4"
+          a.item data-src="#{asset_path('photo/carousel/pic(10).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(10).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(11).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(11).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(12).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(12).jpg')}" alt=""
+        / Food photo
+        .owl-carousel.animated-thumbnials data-carousel-attr="5"
+          a.item data-src="#{asset_path('photo/carousel/pic(13).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(13).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(14).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(14).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(15).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(15).jpg')}" alt=""
+        / Ділова фотосесія
+        .owl-carousel.animated-thumbnials data-carousel-attr="6"
+          a.item data-src="#{asset_path('photo/carousel/pic(17).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(17).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(18).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(18).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(19).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(19).jpg')}" alt=""
+        / Ювелірні вироби
+        .owl-carousel.animated-thumbnials data-carousel-attr="7"
+          a.item data-src="#{asset_path('photo/carousel/pic(20).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(20).jpg')}" alt=""
+          a.item data-src="#{asset_path('photo/carousel/pic(21).jpg')}"
+            img src="#{asset_path('photo/carousel/pic(21).jpg')}" alt=""
+
+
+/ Contact field
+.contact-form
+
+  .row
+    .columns.xlarge-10.xlarge-push-1
+  
+      p.title Замовити фотосесію
+      p.description Якщо ви шукаєте фотостудію для зйомки &mdash; зв'яжіться з нами і ми організуємо час і простір так, щоб вони працювали на вас!
+
+      form
+        .row
+
+          .columns.medium-6
+            .input-field
+              input type="text" name="name" required=""
+              label.placeholder Ім'я та прізвище
+              .underline
+            .input-field
+              input type="email" name="email" required=""
+              label.placeholder E-mail
+              .underline
+
+          .columns.medium-6
+            .input-field
+              textarea rows="4"
+              label.placeholder Коментар
+              .underline
+
+          .columns
+            button type="submit"
+              | Замовити
+              = inline_svg ('icons/envelope.svg')
+
+/ Google map
+.map-wrap
+  #googleMap
+
+/ Contact info
+.contacts-wrap
+  .row
+    .columns.medium-4
+      a.contact-link title="Напишіть нам листа" href="mailto:clients@coi.com.ua"
+        = inline_svg ('icons/envelope.svg')
+        p.type e-mail
+        p.details clients@coi.com.ua
+    .columns.medium-4
+      a.contact-link title="Задзвоніть нам" href="mailto:clients@coi.com.ua"
+        = inline_svg ('icons/phone.svg')
+        p.type Телефон
+        p.details +38 (097) 791-33-70
+    .columns.medium-4
+      .contact-link href="mailto:clients@coi.com.ua"
+        = inline_svg ('icons/map-marker.svg')
+        p.type Адреса
+        p.details
+          | вул. Шевченка, 111а
+          br
+          | м. Львів, Україна
+
+/ Footer
+footer
+  .row
+    .columns.medium-4
+      a.logo title="На головну сторінку"
+        span.company-name coi
+        span.policy &copy;2014-2018 COI. All rights reserved.
+
+    .columns.medium-4
+      .align-center
+        ul.socials
+          li
+            a title="Слідкуйте за нами в соцмережах" href="https://www.facebook.com/coi.com.ua/" target="_blank" = inline_svg ('icons/facebook.svg')
+          li
+            a title="Слідкуйте за нами в соцмережах" href="https://www.instagram.com/coi.com.ua/" = inline_svg ('icons/instagram.svg')
+          li
+            a title="Слідкуйте за нами в соцмережах" href="https://www.linkedin.com/company/coi-marketing-&-software/" = inline_svg ('icons/linkedin.svg')
+          li
+            a title="Слідкуйте за нами в соцмережах" href="https://twitter.com/coi_com_ua" = inline_svg ('icons/twitter.svg')
+
+
+    .columns.medium-4
+      .align-right
+        a.to-main-website href="" title="Перейти на головний сайт компанії" Головний сайт

@@ -1,0 +1,58 @@
+footer
+  position: relative
+  background: #111111
+  padding: 30px 20px
+  &:before
+    content: ''
+    display: block
+    width: 1400px
+    max-width: calc(100% - 20px)
+    height: 1px
+    background: white
+    opacity: 0.2
+    +x-align
+    top: 0
+
+  .logo
+    .company-name
+      @extend %monserat
+      font-size: 20px
+      font-weight: 800
+      text-transform: uppercase
+      color: white
+      margin-right: 10px
+    .policy
+      font-size: 14px
+      color: white
+      opacity: 0.4
+    .company-name, .policy
+      +transition(.2s)
+    &:hover
+      .company-name
+        color: $green
+      .policy
+        opacity: 1
+
+  .socials
+    li
+      display: inline-block
+      margin: 0 10px
+    svg
+      width: 16px
+      height: 16px
+      fill: white
+      +transition(.2s)
+    a
+      padding: 10px
+      &:hover
+        svg
+          fill: $green
+
+  .to-main-website
+    font-size: 14px
+    color: white
+    opacity: 0.4
+    +transition(.2s)
+    &:hover
+      opacity: 1
+      color: $green
