@@ -7,14 +7,12 @@ header_selector = ".top-nav-wrapper"
 banner_selector = ""
 
 
-
 setClosingTimeout = ()->
 
   $top_nav = $(this)
   visibility_duration = 3000
   window.top_nav_timeout =  setTimeout(
     ()->
-      #alert("setClosingTimeout")
       window.top_nav_timeout = false
       if !window.top_nav_locked
 
@@ -48,7 +46,6 @@ handle_scroll = (e)->
     delta = e
 
   $("body").attr("header_timeout")
-  #console.log "delta: ", delta
   if scroll_top > banner_height && delta < 0 && !$("body").hasClass("navigation_move")
     $top_nav.addClass(scrolled_class)
     if window.top_nav_timeout
@@ -64,11 +61,7 @@ handle_scroll = (e)->
     $top_nav.removeClass(visible_class)
 
 
-
-
-
   # top banner
-
 
   handle_top_banner = false
   if handle_top_banner
@@ -89,7 +82,6 @@ $("body").on "mouseout", "#{header_selector}.scrolled", (e)->
   if $target.closest(".navigationleft").length == 0 && $target.closest(".header-logo").length == 0
     window.top_nav_locked = false
     setClosingTimeout.apply($(header_selector))
-
 
 
 $(window).on "scrolldelta", handle_scroll
@@ -115,26 +107,17 @@ if use_custom_scroll_speed
 
     deltaY = e.originalEvent.deltaY
 
-
     condition = !$body.hasClass('open-popup') && !$body.data("scroll_in_progress") && (current_scroll_top >= min_stroll_top || deltaY < 0)
-    #console.log "condition: ", condition
 
     if condition
 
-
-#console.log "wheel: ", e
       e.preventDefault()
-
-      #future_scroll_top = current_scroll_top + deltaY * 2.5
       scroll_direction_up = deltaY < 0
 
       increment = 100
 
       if scroll_direction_up
         increment = increment * -1
-
-
-
 
       future_scroll_top = current_scroll_top + increment
       if future_scroll_top > max_scroll_top
@@ -145,11 +128,8 @@ if use_custom_scroll_speed
       if current_scroll_top != future_scroll_top
         $body.data("scroll_top", future_scroll_top)
 
-        #console.log "future_scroll_top: ", future_scroll_top
-
         $html_body.stop()
         $html_body.animate({scrollTop: future_scroll_top}, {
           duration: 600,
           easing: "easeOutExpo"
-#easing: "easeOutBack"
         })

@@ -11,9 +11,26 @@ body
   flex-direction: column
   .main-wrapper
     flex: 1
-  &.menu-opened
-    // overflow: hidden
-    // max-height: 100vh
     
 %monserat
   font-family: 'Montserrat Alternates', serif
+
+// Site title
+.title
+  @extend %monserat
+  font-size: 72px
+  line-height: 80px
+  font-weight: 800
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1)
+
+// Contact link with icon
+.contact
+  svg
+    position: relative
+    top: 5px
+  span
+    @extend %monserat
+    font-size: 18px
+    font-weight: 600
+    margin-left: 6px
+    +transition(.2s)
